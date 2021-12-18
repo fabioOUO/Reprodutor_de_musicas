@@ -81,9 +81,10 @@ const volumeLess = () => {
 
 const alterMusic = (value) => {
   if (changeMusic()) {
-    if (musicNum + value < 0 || musicNum + value >= fileMusics.length) return;
+    const newMusicNum = parseInt(musicNum) + parseInt(value);
+    if (newMusicNum < 0 || newMusicNum >= fileMusics.length) return;
 
-    musicNum += value;
+    musicNum = newMusicNum;
 
     music.pause();
     play = false;
